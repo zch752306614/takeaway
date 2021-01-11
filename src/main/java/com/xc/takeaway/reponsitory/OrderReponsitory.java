@@ -11,7 +11,9 @@ import java.util.List;
 @Mapper
 public interface OrderReponsitory {
     public Integer insertOrder(Order order);
+
     public List<Order> selectObject(Order order);
+
     public List<Order> selectOrders();
 
     public Integer updateOrder(Order order);

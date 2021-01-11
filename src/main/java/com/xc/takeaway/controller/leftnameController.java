@@ -21,24 +21,24 @@ public class leftnameController {
     @Autowired
     leftnameService leftnameService;
 
-    @RequestMapping(value = "/leftnames",method = RequestMethod.POST)
+    @RequestMapping(value = "/leftnames", method = RequestMethod.POST)
     public WebAPIResult leftnames(
             @RequestBody leftName leftName
-    ){
-        WebAPIResult webAPIResult=new WebAPIResult();
+    ) {
+        WebAPIResult webAPIResult = new WebAPIResult();
 
-        List<leftName> list=leftnameService.leftNames(leftName);
+        List<leftName> list = leftnameService.leftNames(leftName);
 
         webAPIResult.setResult(0);
         webAPIResult.setData(list);
         return webAPIResult;
     }
 
-    @RequestMapping(value = "/insertName",method = RequestMethod.POST)
+    @RequestMapping(value = "/insertName", method = RequestMethod.POST)
     public WebAPIResult insertName(
             @RequestBody leftName leftName
-    ){
-        WebAPIResult webAPIResult=new WebAPIResult();
+    ) {
+        WebAPIResult webAPIResult = new WebAPIResult();
         System.out.println(leftName);
         String id;
         UUID uuid = UUID.randomUUID();
@@ -50,7 +50,7 @@ public class leftnameController {
 
         leftName.setId(id);
 
-        int a=leftnameService.insertName(leftName);
+        int a = leftnameService.insertName(leftName);
 
         webAPIResult.setResult(0);
         webAPIResult.setData(a);

@@ -21,12 +21,12 @@ public class shopOrder {
     shopService shopService;
 
     @ApiOperation("美食店铺")
-    @RequestMapping(value = "/shopListbyType",method = RequestMethod.POST)
+    @RequestMapping(value = "/shopListbyType", method = RequestMethod.POST)
     public WebAPIResult shoplist(
             @RequestBody Shop shop
-    ){
-        WebAPIResult webAPIResult=new WebAPIResult();
-        List<Shop> list=shopService.shoplist(shop);
+    ) {
+        WebAPIResult webAPIResult = new WebAPIResult();
+        List<Shop> list = shopService.shoplist(shop);
 
         webAPIResult.setResult(0);
         webAPIResult.setData(list);

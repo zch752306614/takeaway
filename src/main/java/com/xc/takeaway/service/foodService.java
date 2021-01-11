@@ -14,22 +14,22 @@ public class foodService {
     FoodReponsitory foodReponsitory;
 
     //商家列表
-    public List<Shop> shopList(){
+    public List<Shop> shopList() {
         return foodReponsitory.shopList();
     }
 
     //菜列表
-    public List<Food> foodList( Food food){
+    public List<Food> foodList(Food food) {
         return foodReponsitory.foodList(food);
     }
 
     //商家左侧列表
-    public List<leftName> leftName(leftName leftName){
-        return  foodReponsitory.leftName(leftName);
+    public List<leftName> leftName(leftName leftName) {
+        return foodReponsitory.leftName(leftName);
     }
 
     //菜品评论
-    public List<foodComment> foodComment(foodComment foodComment){
+    public List<foodComment> foodComment(foodComment foodComment) {
         return foodReponsitory.foodComment(foodComment);
     }
 
@@ -43,31 +43,31 @@ public class foodService {
         return foodReponsitory.shopInfo(shop);
     }
 
-    public List<Food> allFoods(){
+    public List<Food> allFoods() {
         return foodReponsitory.allFoods();
     }
 
-    public Integer updateFood(Food food){
-       return foodReponsitory.updateFood(food);
+    public Integer updateFood(Food food) {
+        return foodReponsitory.updateFood(food);
     }
 
-    public Integer deleteFood(Food food){
+    public Integer deleteFood(Food food) {
         return foodReponsitory.deleteFood(food);
     }
 
-    public Integer insertFood(Food food){
-        return  foodReponsitory.insertFood(food);
+    public Integer insertFood(Food food) {
+        return foodReponsitory.insertFood(food);
     }
 
-    public List<Food> shopFoodlist(Food food){
+    public List<Food> shopFoodlist(Food food) {
         return foodReponsitory.shopFoodlist(food);
     }
 
-    public List<Shop> shopFilter(Shop shop){
+    public List<Shop> shopFilter(Shop shop) {
         return foodReponsitory.shopFilter(shop);
     }
 
-    public Integer shopFooddelete(Food food){
+    public Integer shopFooddelete(Food food) {
         return foodReponsitory.shopFooddelete(food);
     }
 }

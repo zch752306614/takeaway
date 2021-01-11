@@ -9,11 +9,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 @SpringBootConfiguration
-public class WebAppConfig extends WebMvcConfigurationSupport   {
+public class WebAppConfig extends WebMvcConfigurationSupport {
 
 	@Value("${resources.root}")
-    private String rootResourcesPath;
-	
+	private String rootResourcesPath;
+
 	@Value("${resources.path}")
 	private String resources;
 
@@ -26,8 +26,8 @@ public class WebAppConfig extends WebMvcConfigurationSupport   {
 				"classpath:/META-INF/resources/");
 		registry.addResourceHandler("/webjars/**").addResourceLocations(
 				"classpath:/META-INF/resources/webjars/");
-		registry.addResourceHandler("/resources/**").addResourceLocations("file:"+rootResourcesPath+resources);
+		registry.addResourceHandler("/resources/**").addResourceLocations("file:" + rootResourcesPath + resources);
 		super.addResourceHandlers(registry);
 	}
-	
+
 }

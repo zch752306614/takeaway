@@ -10,8 +10,10 @@ import java.util.List;
 @Repository
 @Mapper
 public interface FoodReponsitory {
-    List<Shop> shopList ();
+    List<Shop> shopList();
+
     List<Food> foodList(Food food);
+
     List<foodComment> foodComment(foodComment foodComment);
 
     List<leftName> leftName(leftName leftName);

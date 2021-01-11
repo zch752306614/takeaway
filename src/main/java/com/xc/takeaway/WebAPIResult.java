@@ -18,18 +18,28 @@ public class WebAPIResult implements Serializable {
      */
     private static final long serialVersionUID = 1L;
 
-    /** 成功 */
+    /**
+     * 成功
+     */
     public static final int SUCCESS = 1;
 
-    /** 失败 */
+    /**
+     * 失败
+     */
     public static final int FAIL = 0;
 
-    /** 警告 */
+    /**
+     * 警告
+     */
     public static final int WARN = 2;
-    /** 错误 */
+    /**
+     * 错误
+     */
     public static final int ERROR = -1;
 
-    /** 登陆超时 */
+    /**
+     * 登陆超时
+     */
     public static final int TIMEOUT = -2;
     //数据库中数据条数
     private int total;
@@ -96,7 +106,7 @@ public class WebAPIResult implements Serializable {
     }
 
     @JsonIgnore
-    public boolean isSuccess(){
+    public boolean isSuccess() {
         return SUCCESS == result;
     }
 
@@ -117,7 +127,7 @@ public class WebAPIResult implements Serializable {
     }
 
     public Object getVar(String key) {
-        if(null == vars){
+        if (null == vars) {
             return null;
         }
         return vars.get(key);
@@ -139,12 +149,12 @@ public class WebAPIResult implements Serializable {
         this.data = data;
     }
 
-    public void setResultMessage(int result, String message){
+    public void setResultMessage(int result, String message) {
         this.setResult(result);
         this.setMessage(message);
     }
 
-    public void setResultMessage(int result, String message, String cause){
+    public void setResultMessage(int result, String message, String cause) {
         this.setResult(result);
         this.setMessage(message);
         this.setCause(cause);

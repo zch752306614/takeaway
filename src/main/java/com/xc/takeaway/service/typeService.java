@@ -13,7 +13,7 @@ public class typeService {
     @Autowired
     TypeReponsitory typeReponsitory;
 
-    public List<Type> typeList(){
-        return  typeReponsitory.typeList();
+    public List<Type> typeList() {
+        return typeReponsitory.typeList();
     }
 }

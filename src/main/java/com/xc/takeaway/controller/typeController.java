@@ -17,11 +17,11 @@ public class typeController {
     @Autowired
     typeService typeService;
 
-    @RequestMapping(value = "/typerList",method = RequestMethod.POST)
-    public WebAPIResult typeList(){
-        WebAPIResult webAPIResult=new WebAPIResult();
+    @RequestMapping(value = "/typerList", method = RequestMethod.POST)
+    public WebAPIResult typeList() {
+        WebAPIResult webAPIResult = new WebAPIResult();
 
-        List<Type> list =typeService.typeList();
+        List<Type> list = typeService.typeList();
 
         webAPIResult.setResult(0);
         webAPIResult.setData(list);

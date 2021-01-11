@@ -32,17 +32,17 @@ public class userCheck {
     @Autowired
     private HttpServletRequest request;
 
-    @ApiOperation(tags = "身份验证",value ="身份验证")
-    @RequestMapping(value = "/userCheck",method = RequestMethod.POST)
-    public WebAPIResult userCheck(@RequestBody User user){
+    @ApiOperation(tags = "身份验证", value = "身份验证")
+    @RequestMapping(value = "/userCheck", method = RequestMethod.POST)
+    public WebAPIResult userCheck(@RequestBody User user) {
         WebAPIResult webAPIResult = new WebAPIResult();
         System.out.println("身份验证接收到的对象为：");
         System.out.println(user);
 
-        int a=userService.userCheck (user);
-        if(a==1){
+        int a = userService.userCheck(user);
+        if (a == 1) {
             //生成token
-            String token= TokenUtils.getToken(user.getUser_name());
+            String token = TokenUtils.getToken(user.getUser_name());
             System.out.println("生成的token为：");
             System.out.println(token);
             //存储token到session
@@ -52,25 +52,25 @@ public class userCheck {
             webAPIResult.setResult(0);
             webAPIResult.setToken(token);
             System.out.println(webAPIResult);
-        }else{
+        } else {
             webAPIResult.setResult(1);
             webAPIResult.setMessage("用户名或密码错误");
         }
         return webAPIResult;
     }
 
-    @ApiOperation(tags = "身份验证",value ="身份验证")
-    @RequestMapping(value = "/adminCheck",method = RequestMethod.POST)
-    public WebAPIResult adminCheck(@RequestBody User user){
+    @ApiOperation(tags = "身份验证", value = "身份验证")
+    @RequestMapping(value = "/adminCheck", method = RequestMethod.POST)
+    public WebAPIResult adminCheck(@RequestBody User user) {
         WebAPIResult webAPIResult = new WebAPIResult();
         System.out.println("身份验证接收到的对象为：");
         System.out.println(user);
 
-        List<User> list=userService.adminCheck(user);
+        List<User> list = userService.adminCheck(user);
 
-        if(list.size()==1){
+        if (list.size() == 1) {
             //生成token
-            String token= TokenUtils.getToken(user.getUser_name());
+            String token = TokenUtils.getToken(user.getUser_name());
             System.out.println("生成的token为：");
             System.out.println(token);
             //存储token到session
@@ -81,7 +81,7 @@ public class userCheck {
             webAPIResult.setData(list);
             webAPIResult.setToken(token);
             System.out.println(webAPIResult);
-        }else{
+        } else {
             webAPIResult.setResult(1);
             webAPIResult.setMessage("用户名或密码错误");
         }
@@ -89,8 +89,8 @@ public class userCheck {
     }
 
     @ApiOperation("用户注册")
-    @RequestMapping(value = "/userRegister",method = RequestMethod.POST)
-    public WebAPIResult userRegister(@RequestBody User user){
+    @RequestMapping(value = "/userRegister", method = RequestMethod.POST)
+    public WebAPIResult userRegister(@RequestBody User user) {
         WebAPIResult webAPIResult = new WebAPIResult();
         //随机id
         String id;
@@ -103,10 +103,10 @@ public class userCheck {
 
         System.out.println(user);
         user.setId(id);
-        int a=userService.userRegister(user);
-        if(a==1){
+        int a = userService.userRegister(user);
+        if (a == 1) {
             webAPIResult.setResult(0);
-        }else{
+        } else {
             webAPIResult.setResult(1);
             webAPIResult.setMessage("注册失败");
         }
@@ -114,8 +114,8 @@ public class userCheck {
     }
 
     @ApiOperation("商家注册")
-    @RequestMapping(value = "/shoperRegister",method = RequestMethod.POST)
-    public WebAPIResult shoperRegister(@RequestBody User user){
+    @RequestMapping(value = "/shoperRegister", method = RequestMethod.POST)
+    public WebAPIResult shoperRegister(@RequestBody User user) {
         WebAPIResult webAPIResult = new WebAPIResult();
         //随机id
         String id;
@@ -128,10 +128,10 @@ public class userCheck {
 
         System.out.println(user);
         user.setId(id);
-        int a=userService.shoperRegister(user);
-        if(a==1){
+        int a = userService.shoperRegister(user);
+        if (a == 1) {
             webAPIResult.setResult(0);
-        }else{
+        } else {
             webAPIResult.setResult(1);
             webAPIResult.setMessage("注册失败");
         }
@@ -140,10 +140,10 @@ public class userCheck {
 
 
     @ApiOperation("用户数量")
-    @RequestMapping(value = "/userCount",method = RequestMethod.POST)
+    @RequestMapping(value = "/userCount", method = RequestMethod.POST)
     public WebAPIResult userCount() {
-        WebAPIResult webAPIResult=new WebAPIResult();
-        int a=userService.userCount();
+        WebAPIResult webAPIResult = new WebAPIResult();
+        int a = userService.userCount();
         webAPIResult.setResult(0);
         webAPIResult.setData(a);
 
@@ -151,10 +151,10 @@ public class userCheck {
     }
 
     @ApiOperation("管理员数量")
-    @RequestMapping(value = "/adminCount",method = RequestMethod.POST)
+    @RequestMapping(value = "/adminCount", method = RequestMethod.POST)
     public WebAPIResult adminCount() {
-        WebAPIResult webAPIResult=new WebAPIResult();
-        int a=userService.adminCount();
+        WebAPIResult webAPIResult = new WebAPIResult();
+        int a = userService.adminCount();
         webAPIResult.setResult(0);
         webAPIResult.setData(a);
 
@@ -162,13 +162,13 @@ public class userCheck {
     }
 
     @ApiOperation("用户信息")
-    @RequestMapping(value = "/allUsers",method = RequestMethod.POST)
+    @RequestMapping(value = "/allUsers", method = RequestMethod.POST)
     public WebAPIResult allUsers(
             @RequestBody User user
     ) {
         System.out.println(user);
-        WebAPIResult webAPIResult=new WebAPIResult();
-        List<User> list=userService.allUsers(user);
+        WebAPIResult webAPIResult = new WebAPIResult();
+        List<User> list = userService.allUsers(user);
         webAPIResult.setResult(0);
         webAPIResult.setData(list);
 
@@ -176,13 +176,13 @@ public class userCheck {
     }
 
     @ApiOperation("店铺信息")
-    @RequestMapping(value = "/allshops",method = RequestMethod.POST)
+    @RequestMapping(value = "/allshops", method = RequestMethod.POST)
     public WebAPIResult allshops(
             @RequestBody User user
     ) {
 //        System.out.println(shop);
-        WebAPIResult webAPIResult=new WebAPIResult();
-        List<Shop> list=userService.allshops(user);
+        WebAPIResult webAPIResult = new WebAPIResult();
+        List<Shop> list = userService.allshops(user);
         webAPIResult.setResult(0);
         webAPIResult.setData(list);
         System.out.println("所有商家");
@@ -191,13 +191,13 @@ public class userCheck {
     }
 
     @ApiOperation("重置密码")
-    @RequestMapping(value = "/reset",method = RequestMethod.POST)
+    @RequestMapping(value = "/reset", method = RequestMethod.POST)
     public WebAPIResult reset(
             @RequestBody User user
     ) {
         System.out.println(user);
-        WebAPIResult webAPIResult=new WebAPIResult();
-        int a=userService.reset(user);
+        WebAPIResult webAPIResult = new WebAPIResult();
+        int a = userService.reset(user);
         webAPIResult.setResult(0);
         webAPIResult.setData(a);
         System.out.println("修改标记");

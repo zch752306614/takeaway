@@ -11,6 +11,7 @@ import java.util.List;
 @Repository
 public interface LeftNameReponsitory {
 
-    public List<leftName> leftNames (leftName leftName);
+    public List<leftName> leftNames(leftName leftName);
+
     public Integer insertName(leftName leftName);
 }

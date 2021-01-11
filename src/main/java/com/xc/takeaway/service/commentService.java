@@ -10,7 +10,7 @@ public class commentService {
     @Autowired
     CommentReponsitory commentReponsitory;
 
-    public Integer insertComment(shopComment shopComment){
+    public Integer insertComment(shopComment shopComment) {
         return commentReponsitory.insertComment(shopComment);
     }
 }

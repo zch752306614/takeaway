@@ -11,10 +11,14 @@ import java.util.List;
 @Mapper
 public interface UserReponsitory {
 
-    Integer userCheck (User user);
+    Integer userCheck(User user);
+
     Integer userRegister(User user);
-    List<User> adminCheck (User user);
+
+    List<User> adminCheck(User user);
+
     Integer userCount();
+
     Integer adminCount();
 
     public List<User> allUsers(User user);
@@ -23,7 +27,8 @@ public interface UserReponsitory {
     public List<Shop> allshops(User user);
 
     Integer shoperRegister(User user);
+
     public Integer updateSelfshop(User user);
 
-    Integer reset (User user);
+    Integer reset(User user);
 }

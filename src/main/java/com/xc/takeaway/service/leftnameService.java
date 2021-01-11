@@ -13,11 +13,11 @@ public class leftnameService {
     @Autowired
     LeftNameReponsitory leftNameReponsitory;
 
-    public List<leftName> leftNames (leftName leftName){
+    public List<leftName> leftNames(leftName leftName) {
         return leftNameReponsitory.leftNames(leftName);
     }
 
-    public Integer insertName(leftName leftName){
+    public Integer insertName(leftName leftName) {
         return leftNameReponsitory.insertName(leftName);
     }
 }
