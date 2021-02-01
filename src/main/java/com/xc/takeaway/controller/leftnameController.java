@@ -15,16 +15,14 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@Api("商铺左侧栏")
+@Api(tags = "商铺左侧栏")
 public class leftnameController {
 
     @Autowired
     leftnameService leftnameService;
 
     @RequestMapping(value = "/leftnames", method = RequestMethod.POST)
-    public WebAPIResult leftnames(
-            @RequestBody leftName leftName
-    ) {
+    public WebAPIResult leftnames(@RequestBody leftName leftName) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
         List<leftName> list = leftnameService.leftNames(leftName);
@@ -35,9 +33,7 @@ public class leftnameController {
     }
 
     @RequestMapping(value = "/insertName", method = RequestMethod.POST)
-    public WebAPIResult insertName(
-            @RequestBody leftName leftName
-    ) {
+    public WebAPIResult insertName(@RequestBody leftName leftName) {
         WebAPIResult webAPIResult = new WebAPIResult();
         System.out.println(leftName);
         String id;
@@ -56,4 +52,5 @@ public class leftnameController {
         webAPIResult.setData(a);
         return webAPIResult;
     }
+
 }

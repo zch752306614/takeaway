@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@Api("评论")
+@Api(tags = "评论")
 public class commentController {
     @Autowired
     commentService commentService;
@@ -29,9 +29,7 @@ public class commentController {
     shopService shopService;
 
     @RequestMapping(value = "/insertComment", method = RequestMethod.POST)
-    public WebAPIResult insertComment(
-            @RequestBody shopComment shopComment
-    ) {
+    public WebAPIResult insertComment(@RequestBody shopComment shopComment) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
         String id;

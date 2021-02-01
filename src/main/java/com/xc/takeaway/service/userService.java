@@ -15,44 +15,72 @@ public class userService {
     @Autowired
     UserReponsitory userReponsitory;
 
-    //登录验证
+    /**
+     * 用户登录验证
+     **/
     public Integer userCheck(User user) {
         return userReponsitory.userCheck(user);
     }
 
-    //用户注册
+    /**
+     * 用户注册
+     **/
     public Integer userRegister(User user) {
         return userReponsitory.userRegister(user);
     }
 
+    /**
+     * 管理员登录验证
+     **/
     public List<User> adminCheck(User user) {
         return userReponsitory.adminCheck(user);
     }
 
+    /**
+     * 用户数量
+     **/
     public Integer userCount() {
         return userReponsitory.userCount();
     }
 
+    /**
+     * 管理员数量
+     **/
     public Integer adminCount() {
         return userReponsitory.adminCount();
     }
 
+    /**
+     * 获取用户列表
+     **/
     public List<User> allUsers(User user) {
         return userReponsitory.allUsers(user);
     }
 
+    /**
+     * 获取店铺列表
+     **/
     public List<Shop> allshops(User user) {
         return userReponsitory.allshops(user);
     }
 
+    /**
+     * 用户新增店铺
+     **/
     public Integer shoperRegister(User user) {
         return userReponsitory.shoperRegister(user);
     }
 
+    /**
+     * 变更店铺
+     **/
     public Integer updateSelfshop(User user) {
         return userReponsitory.updateSelfshop(user);
     }
 
+    /**
+     * 重置用户
+     **/
     public Integer reset(User user) {
         return userReponsitory.reset(user);
     }

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Api("店铺")
+@Api(tags = "店铺")
 @RestController
 public class shopOrder {
 
@@ -22,9 +22,7 @@ public class shopOrder {
 
     @ApiOperation("美食店铺")
     @RequestMapping(value = "/shopListbyType", method = RequestMethod.POST)
-    public WebAPIResult shoplist(
-            @RequestBody Shop shop
-    ) {
+    public WebAPIResult shoplist(@RequestBody Shop shop) {
         WebAPIResult webAPIResult = new WebAPIResult();
         List<Shop> list = shopService.shoplist(shop);
 
@@ -33,4 +31,5 @@ public class shopOrder {
 
         return webAPIResult;
     }
+
 }

@@ -12,6 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="65a6f459-adb4-4221-949f-90c871f174c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/Swagger2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/Swagger2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/TakeawayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/TakeawayApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/WebAPIResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/WebAPIResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/ResourceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/commentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/commentController.java" afterDir="false" />
@@ -21,9 +25,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/shopOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/shopOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/typeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/typeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/userCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/userCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/reponsitory/FoodReponsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/reponsitory/FoodReponsitory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/reponsitory/LeftNameReponsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/reponsitory/LeftNameReponsitory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/reponsitory/OrderReponsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/reponsitory/OrderReponsitory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/reponsitory/UserReponsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/reponsitory/UserReponsitory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/service/commentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/service/commentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/service/foodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/service/foodService.java" afterDir="false" />
@@ -32,9 +33,33 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/service/shopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/service/shopService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/service/typeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/service/typeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/service/userService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/service/userService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/token/TokenEncryptUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/token/TokenEncryptUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/token/TokenUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/token/TokenUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/utils/UploadInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/utils/UploadInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/User.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/User.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xc/takeaway/TakeawayApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xc/takeaway/TakeawayApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/CorsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/CorsConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/Swagger2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/Swagger2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/TakeawayApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/TakeawayApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/WebAPIResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/WebAPIResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/ResourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/ResourceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/commentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/commentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/foodController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/foodController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/leftnameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/leftnameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/orderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/orderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/shopOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/shopOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/typeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/typeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/userCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/userCheck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/commentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/commentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/foodService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/foodService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/leftnameService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/leftnameService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/orderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/orderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/shopService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/shopService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/typeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/typeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/userService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/userService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/token/TokenEncryptUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/token/TokenEncryptUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/token/TokenUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/token/TokenUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/User.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/User.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/xc/takeaway/TakeawayApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/xc/takeaway/TakeawayApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +188,12 @@
       <workItem from="1590913536009" duration="5287000" />
       <workItem from="1590976054973" duration="8611000" />
       <workItem from="1591058414398" duration="4044000" />
-      <workItem from="1610329586704" duration="17416000" />
+      <workItem from="1610329586704" duration="18102000" />
+      <workItem from="1610500392829" duration="3474000" />
+      <workItem from="1611628963956" duration="1079000" />
+      <workItem from="1611817712617" duration="2686000" />
+      <workItem from="1611887617831" duration="5053000" />
+      <workItem from="1612165292218" duration="1008000" />
     </task>
     <servers />
   </component>
@@ -180,59 +210,60 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="498" y="297" width="443" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1610329835443">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="498" y="297" width="443" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.860@0.0.1440.860" timestamp="1610329835443" />
-    <state width="1397" height="276" key="GridCell.Tab.0.bottom" timestamp="1610355567399">
+    <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1612165843869">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1610355567399" />
-    <state width="1397" height="276" key="GridCell.Tab.0.center" timestamp="1610355567399">
+    <state width="1397" height="222" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1612165843869" />
+    <state width="1397" height="222" key="GridCell.Tab.0.center" timestamp="1612165843868">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1610355567399" />
-    <state width="1397" height="276" key="GridCell.Tab.0.left" timestamp="1610355567399">
+    <state width="1397" height="222" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1612165843868" />
+    <state width="1397" height="222" key="GridCell.Tab.0.left" timestamp="1612165843868">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1610355567399" />
-    <state width="1397" height="276" key="GridCell.Tab.0.right" timestamp="1610355567399">
+    <state width="1397" height="222" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1612165843868" />
+    <state width="1397" height="222" key="GridCell.Tab.0.right" timestamp="1612165843868">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1610355567399" />
-    <state width="1397" height="276" key="GridCell.Tab.1.bottom" timestamp="1610355566762">
+    <state width="1397" height="222" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1612165843868" />
+    <state width="1397" height="222" key="GridCell.Tab.1.bottom" timestamp="1611923262300">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1610355566762" />
-    <state width="1397" height="276" key="GridCell.Tab.1.center" timestamp="1610355566762">
+    <state width="1397" height="222" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1611923262300" />
+    <state width="1397" height="222" key="GridCell.Tab.1.center" timestamp="1611923262300">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1610355566762" />
-    <state width="1397" height="276" key="GridCell.Tab.1.left" timestamp="1610355566762">
+    <state width="1397" height="222" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1611923262300" />
+    <state width="1397" height="222" key="GridCell.Tab.1.left" timestamp="1611923262299">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1610355566762" />
-    <state width="1397" height="276" key="GridCell.Tab.1.right" timestamp="1610355566762">
+    <state width="1397" height="222" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1611923262299" />
+    <state width="1397" height="222" key="GridCell.Tab.1.right" timestamp="1611923262300">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1610355566762" />
-    <state width="1397" height="276" key="GridCell.Tab.2.bottom" timestamp="1610355566762">
+    <state width="1397" height="222" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1611923262300" />
+    <state width="1397" height="276" key="GridCell.Tab.2.bottom" timestamp="1611923262186">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.2.bottom/0.0.1440.860@0.0.1440.860" timestamp="1610355566762" />
-    <state width="1397" height="276" key="GridCell.Tab.2.center" timestamp="1610355566762">
+    <state width="1397" height="276" key="GridCell.Tab.2.bottom/0.0.1440.860@0.0.1440.860" timestamp="1611923262186" />
+    <state width="1397" height="276" key="GridCell.Tab.2.center" timestamp="1611923262186">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.2.center/0.0.1440.860@0.0.1440.860" timestamp="1610355566762" />
-    <state width="1397" height="276" key="GridCell.Tab.2.left" timestamp="1610355566762">
+    <state width="1397" height="276" key="GridCell.Tab.2.center/0.0.1440.860@0.0.1440.860" timestamp="1611923262186" />
+    <state width="1397" height="276" key="GridCell.Tab.2.left" timestamp="1611923262185">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.2.left/0.0.1440.860@0.0.1440.860" timestamp="1610355566762" />
-    <state width="1397" height="276" key="GridCell.Tab.2.right" timestamp="1610355566762">
+    <state width="1397" height="276" key="GridCell.Tab.2.left/0.0.1440.860@0.0.1440.860" timestamp="1611923262185" />
+    <state width="1397" height="276" key="GridCell.Tab.2.right" timestamp="1611923262186">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.2.right/0.0.1440.860@0.0.1440.860" timestamp="1610355566762" />
+    <state width="1397" height="276" key="GridCell.Tab.2.right/0.0.1440.860@0.0.1440.860" timestamp="1611923262186" />
   </component>
 </project>

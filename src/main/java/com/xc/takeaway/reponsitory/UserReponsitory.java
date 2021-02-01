@@ -23,7 +23,6 @@ public interface UserReponsitory {
 
     public List<User> allUsers(User user);
 
-
     public List<Shop> allshops(User user);
 
     Integer shoperRegister(User user);

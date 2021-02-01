@@ -13,7 +13,11 @@ public class typeService {
     @Autowired
     TypeReponsitory typeReponsitory;
 
+    /**
+     * 获取分类
+     **/
     public List<Type> typeList() {
         return typeReponsitory.typeList();
     }
+
 }

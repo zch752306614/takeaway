@@ -13,11 +13,18 @@ public class leftnameService {
     @Autowired
     LeftNameReponsitory leftNameReponsitory;
 
+    /**
+     * 获取店铺分类
+     **/
     public List<leftName> leftNames(leftName leftName) {
         return leftNameReponsitory.leftNames(leftName);
     }
 
+    /**
+     * 新增店铺分类
+     **/
     public Integer insertName(leftName leftName) {
         return leftNameReponsitory.insertName(leftName);
     }
+
 }

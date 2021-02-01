@@ -10,6 +10,9 @@ public class commentService {
     @Autowired
     CommentReponsitory commentReponsitory;
 
+    /**
+     * 新增评论
+     * */
     public Integer insertComment(shopComment shopComment) {
         return commentReponsitory.insertComment(shopComment);
     }

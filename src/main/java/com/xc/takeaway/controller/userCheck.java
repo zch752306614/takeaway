@@ -19,12 +19,11 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@Api(tags = "TakeAway")
+@Api(tags = "用户管理")
 public class userCheck {
 
     @Autowired
     userService userService;
-
 
     @Autowired
     private HttpSession session;
@@ -32,7 +31,7 @@ public class userCheck {
     @Autowired
     private HttpServletRequest request;
 
-    @ApiOperation(tags = "身份验证", value = "身份验证")
+    @ApiOperation(value = "身份验证")
     @RequestMapping(value = "/userCheck", method = RequestMethod.POST)
     public WebAPIResult userCheck(@RequestBody User user) {
         WebAPIResult webAPIResult = new WebAPIResult();
@@ -59,7 +58,7 @@ public class userCheck {
         return webAPIResult;
     }
 
-    @ApiOperation(tags = "身份验证", value = "身份验证")
+    @ApiOperation(value = "身份验证")
     @RequestMapping(value = "/adminCheck", method = RequestMethod.POST)
     public WebAPIResult adminCheck(@RequestBody User user) {
         WebAPIResult webAPIResult = new WebAPIResult();
@@ -138,7 +137,6 @@ public class userCheck {
         return webAPIResult;
     }
 
-
     @ApiOperation("用户数量")
     @RequestMapping(value = "/userCount", method = RequestMethod.POST)
     public WebAPIResult userCount() {
@@ -163,9 +161,7 @@ public class userCheck {
 
     @ApiOperation("用户信息")
     @RequestMapping(value = "/allUsers", method = RequestMethod.POST)
-    public WebAPIResult allUsers(
-            @RequestBody User user
-    ) {
+    public WebAPIResult allUsers(@RequestBody User user) {
         System.out.println(user);
         WebAPIResult webAPIResult = new WebAPIResult();
         List<User> list = userService.allUsers(user);
@@ -177,9 +173,7 @@ public class userCheck {
 
     @ApiOperation("店铺信息")
     @RequestMapping(value = "/allshops", method = RequestMethod.POST)
-    public WebAPIResult allshops(
-            @RequestBody User user
-    ) {
+    public WebAPIResult allshops(@RequestBody User user) {
 //        System.out.println(shop);
         WebAPIResult webAPIResult = new WebAPIResult();
         List<Shop> list = userService.allshops(user);
@@ -192,9 +186,7 @@ public class userCheck {
 
     @ApiOperation("重置密码")
     @RequestMapping(value = "/reset", method = RequestMethod.POST)
-    public WebAPIResult reset(
-            @RequestBody User user
-    ) {
+    public WebAPIResult reset(@RequestBody User user) {
         System.out.println(user);
         WebAPIResult webAPIResult = new WebAPIResult();
         int a = userService.reset(user);
@@ -204,4 +196,5 @@ public class userCheck {
         System.out.println(a);
         return webAPIResult;
     }
+
 }

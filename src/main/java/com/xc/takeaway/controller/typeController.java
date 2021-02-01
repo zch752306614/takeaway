@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Api("店铺类型")
+@Api(tags = "店铺类型")
 @RestController
 public class typeController {
     @Autowired
@@ -28,4 +28,5 @@ public class typeController {
 
         return webAPIResult;
     }
+
 }

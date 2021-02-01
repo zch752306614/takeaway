@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@Api("订单接口")
+@Api(tags = "订单接口")
 public class orderController {
     @Autowired
     orderService orderService;
@@ -28,9 +28,7 @@ public class orderController {
 
     @ApiOperation("插入订单")
     @RequestMapping(value = "/insertOrder", method = RequestMethod.POST)
-    public WebAPIResult insertOrder(
-            @RequestBody String foodList
-    ) {
+    public WebAPIResult insertOrder(@RequestBody String foodList) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
         System.out.println(foodList);
@@ -135,9 +133,7 @@ public class orderController {
 
     @ApiOperation("获取用户所有订单")
     @RequestMapping(value = "/allOrders", method = RequestMethod.POST)
-    public WebAPIResult selectOrder(
-            @RequestBody Order order
-    ) {
+    public WebAPIResult selectOrder(@RequestBody Order order) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
         List<Order> list = orderService.selectObject(order);
@@ -150,9 +146,7 @@ public class orderController {
 
     @ApiOperation("获取商家所有订单")
     @RequestMapping(value = "/shoperOrders", method = RequestMethod.POST)
-    public WebAPIResult shoperOrders(
-            @RequestBody Order order
-    ) {
+    public WebAPIResult shoperOrders(@RequestBody Order order) {
         WebAPIResult webAPIResult = new WebAPIResult();
 //        System.out.println(order);
         List<Order> list = orderService.shoperOrders(order);
@@ -165,8 +159,7 @@ public class orderController {
 
     @ApiOperation("获取所有订单")
     @RequestMapping(value = "/Orders", method = RequestMethod.POST)
-    public WebAPIResult orders(
-    ) {
+    public WebAPIResult orders() {
         WebAPIResult webAPIResult = new WebAPIResult();
 
         List<Order> list = orderService.selectOrders();
@@ -179,9 +172,7 @@ public class orderController {
 
     @ApiOperation("更新收货状态")
     @RequestMapping(value = "/updateOrder", method = RequestMethod.POST)
-    public WebAPIResult updateOrder(
-            @RequestBody Order order
-    ) {
+    public WebAPIResult updateOrder(@RequestBody Order order) {
         WebAPIResult webAPIResult = new WebAPIResult();
         System.out.println(order);
         order.setConfirm_state("0");
@@ -193,9 +184,7 @@ public class orderController {
 
     @ApiOperation("更新接受状态")
     @RequestMapping(value = "/acceptOrder", method = RequestMethod.POST)
-    public WebAPIResult acceptOrder(
-            @RequestBody Order order
-    ) {
+    public WebAPIResult acceptOrder(@RequestBody Order order) {
         WebAPIResult webAPIResult = new WebAPIResult();
         System.out.println(order);
         order.setAccept_state("1");

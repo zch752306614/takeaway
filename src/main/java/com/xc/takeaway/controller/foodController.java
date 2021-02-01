@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-@Api("商铺")
+@Api(tags = "商铺")
 public class foodController {
 
     @Autowired
@@ -40,9 +40,7 @@ public class foodController {
 
     @RequestMapping(value = "/foodList", method = RequestMethod.POST)
     @ApiOperation("获取菜品列表")
-    public WebAPIResult List(
-            @RequestBody Food food
-    ) {
+    public WebAPIResult List(@RequestBody Food food) {
         WebAPIResult webAPIResult = new WebAPIResult();
 //        System.out.println(food);
 
@@ -75,9 +73,7 @@ public class foodController {
 
     @RequestMapping(value = "/foodComment", method = RequestMethod.POST)
     @ApiOperation("获取食物评论")
-    public WebAPIResult foodComment(
-            @RequestBody foodComment foodComment
-    ) {
+    public WebAPIResult foodComment(@RequestBody foodComment foodComment) {
         WebAPIResult webAPIResult = new WebAPIResult();
         System.out.println(foodComment);
         List<foodComment> list = foodService.foodComment(foodComment);
@@ -89,9 +85,7 @@ public class foodController {
 
     @RequestMapping(value = "/shopComment", method = RequestMethod.POST)
     @ApiOperation("获取商家评论")
-    public WebAPIResult shopComment(
-            @RequestBody shopComment shopComment
-    ) {
+    public WebAPIResult shopComment(@RequestBody shopComment shopComment) {
         WebAPIResult webAPIResult = new WebAPIResult();
         List<shopComment> list = foodService.shopComment(shopComment);
         System.out.println(list);
@@ -102,9 +96,7 @@ public class foodController {
 
     @RequestMapping(value = "/shopInfo", method = RequestMethod.POST)
     @ApiOperation("获取商家信息")
-    public WebAPIResult shop(
-            @RequestBody Shop shop
-    ) {
+    public WebAPIResult shop(@RequestBody Shop shop) {
         WebAPIResult webAPIResult = new WebAPIResult();
         List<Shop> list = foodService.shopInfo(shop);
         System.out.println(list);
@@ -115,9 +107,7 @@ public class foodController {
 
     @RequestMapping(value = "/updateShop", method = RequestMethod.POST)
     @ApiOperation("更新商家信息")
-    public WebAPIResult updateShop(
-            @RequestBody Shop shop
-    ) {
+    public WebAPIResult updateShop(@RequestBody Shop shop) {
         System.out.println(shop);
         WebAPIResult webAPIResult = new WebAPIResult();
 
@@ -132,9 +122,7 @@ public class foodController {
 
     @RequestMapping(value = "/deleteShop", method = RequestMethod.POST)
     @ApiOperation("删除商家信息")
-    public WebAPIResult deleteShop(
-            @RequestBody Shop shop
-    ) {
+    public WebAPIResult deleteShop(@RequestBody Shop shop) {
         System.out.println(shop);
         WebAPIResult webAPIResult = new WebAPIResult();
 
@@ -172,9 +160,7 @@ public class foodController {
 
     @RequestMapping(value = "/shopFoodlist", method = RequestMethod.POST)
     @ApiOperation("获取本店所有食品")
-    public WebAPIResult shopFoodlist(
-            @RequestBody Food food
-    ) {
+    public WebAPIResult shopFoodlist(@RequestBody Food food) {
         WebAPIResult webAPIResult = new WebAPIResult();
 //        System.out.println(food);
         List<Food> list = foodService.shopFoodlist(food);
@@ -188,9 +174,7 @@ public class foodController {
 
     @RequestMapping(value = "/updateFood", method = RequestMethod.POST)
     @ApiOperation("更新食品")
-    public WebAPIResult updateFood(
-            @RequestBody Food food
-    ) {
+    public WebAPIResult updateFood(@RequestBody Food food) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
         System.out.println(food);
@@ -205,9 +189,7 @@ public class foodController {
 
     @RequestMapping(value = "/deleteFood", method = RequestMethod.POST)
     @ApiOperation("删除食品")
-    public WebAPIResult deleteFood(
-            @RequestBody Food food
-    ) {
+    public WebAPIResult deleteFood(@RequestBody Food food) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
         food.setDelete_flag("1");
@@ -223,9 +205,7 @@ public class foodController {
 
     @RequestMapping(value = "/insertShop", method = RequestMethod.POST)
     @ApiOperation("添加商家")
-    public WebAPIResult insertShop(
-            @RequestBody Shop shop
-    ) {
+    public WebAPIResult insertShop(@RequestBody Shop shop) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
 
@@ -262,12 +242,9 @@ public class foodController {
         return webAPIResult;
     }
 
-
     @RequestMapping(value = "/insertSelfshop", method = RequestMethod.POST)
     @ApiOperation("商家自我添加")
-    public WebAPIResult insertSelfshop(
-            @RequestBody Shop shop
-    ) {
+    public WebAPIResult insertSelfshop(@RequestBody Shop shop) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
         String myshop = shop.shop_num;
@@ -317,9 +294,7 @@ public class foodController {
 
     @RequestMapping(value = "/insertFood", method = RequestMethod.POST)
     @ApiOperation("添加食物")
-    public WebAPIResult insertFood(
-            @RequestBody Food food
-    ) {
+    public WebAPIResult insertFood(@RequestBody Food food) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
 
@@ -344,9 +319,7 @@ public class foodController {
 
     @RequestMapping(value = "/shopTypelist", method = RequestMethod.POST)
     @ApiOperation("根据商家评分排序获取商家列表")
-    public WebAPIResult shopTypelist(
-            @RequestBody Shop shop
-    ) {
+    public WebAPIResult shopTypelist(@RequestBody Shop shop) {
         WebAPIResult webAPIResult = new WebAPIResult();
         List<Shop> list = shopService.shopTypelist(shop);
         System.out.println("商家列表");
@@ -358,9 +331,7 @@ public class foodController {
 
     @RequestMapping(value = "/byAverage", method = RequestMethod.POST)
     @ApiOperation("根据平均排序获取商家列表")
-    public WebAPIResult byAverage(
-            @RequestBody Shop shop
-    ) {
+    public WebAPIResult byAverage(@RequestBody Shop shop) {
         WebAPIResult webAPIResult = new WebAPIResult();
         List<Shop> list = shopService.byAverage(shop);
         System.out.println("商家列表");
@@ -372,9 +343,7 @@ public class foodController {
 
     @RequestMapping(value = "/byDistance", method = RequestMethod.POST)
     @ApiOperation("根据距离排序获取商家列表")
-    public WebAPIResult byDistance(
-            @RequestBody Shop shop
-    ) {
+    public WebAPIResult byDistance(@RequestBody Shop shop) {
         WebAPIResult webAPIResult = new WebAPIResult();
         List<Shop> list = shopService.byDistance(shop);
         System.out.println("商家列表");
@@ -386,9 +355,7 @@ public class foodController {
 
     @RequestMapping(value = "/shopFilter", method = RequestMethod.POST)
     @ApiOperation("获取商家列表")
-    public WebAPIResult shopFilter(
-            @RequestBody Shop shop
-    ) {
+    public WebAPIResult shopFilter(@RequestBody Shop shop) {
         WebAPIResult webAPIResult = new WebAPIResult();
         System.out.println(shop);
         List<Shop> list = foodService.shopFilter(shop);
@@ -398,4 +365,5 @@ public class foodController {
         webAPIResult.setData(list);
         return webAPIResult;
     }
+
 }

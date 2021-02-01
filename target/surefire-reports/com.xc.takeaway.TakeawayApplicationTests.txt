@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.xc.takeaway.TakeawayApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.634 s <<< FAILURE! - in com.xc.takeaway.TakeawayApplicationTests
+com.xc.takeaway.TakeawayApplicationTests  Time elapsed: 0.633 s  <<< ERROR!
+java.lang.IllegalStateException: Found multiple @SpringBootConfiguration annotated classes [Generic bean: class [com.xc.takeaway.TakeawayApplication]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [F:\IntelliJ IDEA 2020.1\project\takeaway\target\classes\com\xc\takeaway\TakeawayApplication.class], Generic bean: class [com.xc.takeaway.WebAppConfig]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [F:\IntelliJ IDEA 2020.1\project\takeaway\target\classes\com\xc\takeaway\WebAppConfig.class]]
+

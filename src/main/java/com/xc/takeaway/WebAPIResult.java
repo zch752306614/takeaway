@@ -11,6 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
 
+/**
+ * 接口统一的返回格式
+ **/
 public class WebAPIResult implements Serializable {
 
     /**
@@ -160,6 +163,7 @@ public class WebAPIResult implements Serializable {
         this.setCause(cause);
     }
 
+    @Override
     public String toString() {
 		/*JSONStringer stringer = new JSONStringer();
 		stringer.object()

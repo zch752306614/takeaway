@@ -3,14 +3,14 @@
 
 <mapper namespace="com.xc.takeaway.reponsitory.UserReponsitory">
 
-    <resultMap id="myUser" type="java.util.HashMap">
+    <!--<resultMap id="myUser" type="java.util.HashMap">
         <result column="id" property="id"/>
         <result column="user_name" property="user_name"/>
         <result column="delete_flag" property="delete_flag"/>
         <result column="role_flag" property="role_flag"/>
         <result column="email" property="email"/>
         <result column="shop_num" property="shop_num"/>
-    </resultMap>
+    </resultMap>-->
 
     <select id="userCheck" parameterType="com.xc.takeaway.utils.User" resultType="java.lang.Integer">
         SELECT Count(*) FROM t_sys_user WHERE user_name = #{user_name} and user_password=#{user_password} and role_flag=1

@@ -1,6 +1,8 @@
 package com.xc.takeaway.controller;
 
 import com.xc.takeaway.utils.UploadInfo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+@Api(tags = "上传文件")
 @RestController
 public class ResourceController {
 
@@ -23,9 +26,10 @@ public class ResourceController {
 
     @Value("${resources.images}")
     private String imagesPath;
-    //    @Value("${server.servlet.context-path}")
+    //@Value("${server.servlet.context-path}")
     private String serverPath = "";
 
+    @ApiOperation("上传文件")
     @RequestMapping(value = "uploadimage", method = RequestMethod.POST)
     public UploadInfo imgUpdate(MultipartFile file) {
         UploadInfo uploadInfo = new UploadInfo();
@@ -64,5 +68,6 @@ public class ResourceController {
         }
         return uploadInfo;
     }
+
 }
 
