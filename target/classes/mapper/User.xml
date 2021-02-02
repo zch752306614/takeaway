@@ -77,5 +77,9 @@
         and   email=#{email}
     </update>
 
+    <select id="getUser" parameterType="com.xc.takeaway.utils.User" resultType="com.xc.takeaway.utils.User">
+        SELECT * FROM t_sys_user
+        WHERE  role_flag=#{role_flag} and user_name=#{user_name}
+    </select>
 
 </mapper>

@@ -102,12 +102,17 @@ public class userCheck {
 
         System.out.println(user);
         user.setId(id);
-        int a = userService.userRegister(user);
-        if (a == 1) {
-            webAPIResult.setResult(0);
-        } else {
+        if (!userService.isRepeat(user)) {
             webAPIResult.setResult(1);
-            webAPIResult.setMessage("注册失败");
+            webAPIResult.setMessage("用户名重复");
+        } else {
+            int a = userService.userRegister(user);
+            if (a == 1) {
+                webAPIResult.setResult(0);
+            } else {
+                webAPIResult.setResult(1);
+                webAPIResult.setMessage("注册失败");
+            }
         }
         return webAPIResult;
     }
@@ -127,12 +132,17 @@ public class userCheck {
 
         System.out.println(user);
         user.setId(id);
-        int a = userService.shoperRegister(user);
-        if (a == 1) {
-            webAPIResult.setResult(0);
-        } else {
+        if (!userService.isRepeat(user)) {
             webAPIResult.setResult(1);
-            webAPIResult.setMessage("注册失败");
+            webAPIResult.setMessage("用户名重复");
+        } else {
+            int a = userService.shoperRegister(user);
+            if (a == 1) {
+                webAPIResult.setResult(0);
+            } else {
+                webAPIResult.setResult(1);
+                webAPIResult.setMessage("注册失败");
+            }
         }
         return webAPIResult;
     }

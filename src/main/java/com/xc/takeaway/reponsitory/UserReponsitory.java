@@ -30,4 +30,6 @@ public interface UserReponsitory {
     public Integer updateSelfshop(User user);
 
     Integer reset(User user);
+
+    public List<User> getUser(User user);
 }

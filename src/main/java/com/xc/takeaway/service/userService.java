@@ -84,4 +84,16 @@ public class userService {
     public Integer reset(User user) {
         return userReponsitory.reset(user);
     }
+
+    /**
+     * 查询用户名是否重复
+     **/
+    public boolean isRepeat(User user) {
+        List<User> list = userReponsitory.getUser(user);
+        if (list != null && list.size() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
