@@ -7,6 +7,7 @@ import com.xc.takeaway.service.shopService;
 import com.xc.takeaway.utils.Shop;
 import com.xc.takeaway.utils.shopComment;
 import io.swagger.annotations.Api;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,17 +33,17 @@ public class commentController {
     public WebAPIResult insertComment(@RequestBody shopComment shopComment) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
-        String id;
+        /*String id;
         UUID uuid = UUID.randomUUID();
         id = uuid.toString();
         id = id.replace("-", "");
         int num = id.hashCode();
         num = num < 0 ? -num : num;
         id = String.valueOf(num);
+        shopComment.setId(id);*/
 
-        shopComment.setId(id);
-
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+        //设置日期格式
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         shopComment.setComment_time(df.format(new Date()));
 
         System.out.println(shopComment);
@@ -80,6 +81,13 @@ public class commentController {
         if (a == 1 && b == 1) {
             webAPIResult.setResult(0);
         }
+        return webAPIResult;
+    }
+
+    @RequestMapping(value = "/getComment", method = RequestMethod.POST)
+    public WebAPIResult getComment(@Param("id") String id) {
+        WebAPIResult webAPIResult = new WebAPIResult();
+        webAPIResult.setData(commentService.getComment(id));
         return webAPIResult;
     }
 

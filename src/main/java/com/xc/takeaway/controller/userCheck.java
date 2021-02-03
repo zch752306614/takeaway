@@ -102,7 +102,7 @@ public class userCheck {
 
         System.out.println(user);
         user.setId(id);
-        if (!userService.isRepeat(user)) {
+        if (userService.isRepeat(user)) {
             webAPIResult.setResult(1);
             webAPIResult.setMessage("用户名重复");
         } else {
@@ -132,7 +132,7 @@ public class userCheck {
 
         System.out.println(user);
         user.setId(id);
-        if (!userService.isRepeat(user)) {
+        if (userService.isRepeat(user)) {
             webAPIResult.setResult(1);
             webAPIResult.setMessage("用户名重复");
         } else {

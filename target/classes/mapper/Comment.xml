@@ -3,17 +3,10 @@
 
 <mapper namespace="com.xc.takeaway.reponsitory.CommentReponsitory">
     <insert id="insertComment" parameterType="com.xc.takeaway.utils.shopComment">
-        insert into t_sys_shop_comment values (
-        #{id},
-        #{shop_num},
-        #{user_name},
-        #{comment_time},
-        #{content},
-        #{title},
-        #{pack_score},
-        #{taste_score},
-        #{shop_score},
-        #{send_score}
-        )
+        insert into t_sys_shop_comment(id,shop_num,user_name,comment_time,content,title,pack_score,taste_score,shop_score,send_score)
+        values (#{id},#{shop_num},#{user_name},#{comment_time},#{content},#{title},#{pack_score},#{taste_score},#{shop_score},#{send_score})
     </insert>
+    <select id="getComment" resultType="java.util.Map">
+        select * from t_sys_shop_comment where id=#{id} limit 1
+    </select>
 </mapper>

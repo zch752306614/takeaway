@@ -15,7 +15,7 @@ public class Order implements Serializable {
     public String user_name;
     public String confirm_state;
     public String shop_img;
-
+    public String tel;
     public String accept_state;
 
     public String getAccept_state() {
@@ -122,6 +122,14 @@ public class Order implements Serializable {
         this.extra_info = extra_info;
     }
 
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -137,7 +145,9 @@ public class Order implements Serializable {
                 ", user_name='" + user_name + '\'' +
                 ", confirm_state='" + confirm_state + '\'' +
                 ", shop_img='" + shop_img + '\'' +
+                ", tel='" + tel + '\'' +
                 ", accept_state='" + accept_state + '\'' +
                 '}';
     }
+
 }

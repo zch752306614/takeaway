@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class orderService {
@@ -24,6 +25,13 @@ public class orderService {
      **/
     public List<Order> selectObject(Order order) {
         return orderReponsitory.selectObject(order);
+    }
+
+    /**
+     * 获取用户的订单列表
+     **/
+    public List<Map<String, Object>> getUserOrder(Order order) {
+        return orderReponsitory.getUserOrder(order);
     }
 
     /**
@@ -48,10 +56,31 @@ public class orderService {
     }
 
     /**
+     * 获取店铺的订单列表
+     **/
+    public List<Map<String, Object>> getShopOrders(Order order) {
+        return orderReponsitory.getShopOrders(order);
+    }
+
+    /**
      * 商家接单
      **/
     public Integer acceptOrder(Order order) {
         return orderReponsitory.acceptOrder(order);
+    }
+
+    /**
+     * 商家拒绝接单
+     **/
+    public Integer refuseOrder(String order_id) {
+        return orderReponsitory.refuseOrder(order_id);
+    }
+
+    /**
+     * 用户取消订单
+     **/
+    public Integer canserOrder(String order_id) {
+        return orderReponsitory.refuseOrder(order_id);
     }
 
 }

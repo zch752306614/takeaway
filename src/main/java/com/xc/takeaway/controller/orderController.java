@@ -10,12 +10,14 @@ import com.xc.takeaway.utils.Shop;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import net.sf.json.JSONArray;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -94,8 +96,8 @@ public class orderController {
         String shop_img = shopList.get(0).shop_img;
 
         //更新平均
-        int myaverage = Integer.parseInt(shopList.get(0).getAverage());
-        int average1 = Integer.parseInt(totalPrice) + myaverage / 2;
+        float myaverage = Float.parseFloat(shopList.get(0).getAverage());
+        float average1 = Float.parseFloat(totalPrice) + myaverage / 2;
 
         //更新销量
         int count = list.size() + mysellcount;
@@ -104,7 +106,7 @@ public class orderController {
         Shop shopCount = new Shop();
         shopCount.setShop_num(shop_num);
         shopCount.setSell_count(Integer.toString(count));
-        shopCount.setAverage(Integer.toString(average1));
+        shopCount.setAverage(Float.toString(average1));
         int mycount = shopService.shopCount(shopCount);
 
 
@@ -136,8 +138,8 @@ public class orderController {
     public WebAPIResult selectOrder(@RequestBody Order order) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
-        List<Order> list = orderService.selectObject(order);
-//        System.out.println(list);
+        List<Map<String, Object>> list = orderService.getUserOrder(order);
+        //System.out.println(list);
 
         webAPIResult.setResult(0);
         webAPIResult.setData(list);
@@ -148,9 +150,9 @@ public class orderController {
     @RequestMapping(value = "/shoperOrders", method = RequestMethod.POST)
     public WebAPIResult shoperOrders(@RequestBody Order order) {
         WebAPIResult webAPIResult = new WebAPIResult();
-//        System.out.println(order);
-        List<Order> list = orderService.shoperOrders(order);
-//        System.out.println(list);
+        //System.out.println(order);
+        List<Map<String, Object>> list = orderService.getShopOrders(order);
+        //System.out.println(list);
 
         webAPIResult.setResult(0);
         webAPIResult.setData(list);
@@ -189,6 +191,26 @@ public class orderController {
         System.out.println(order);
         order.setAccept_state("1");
         int a = orderService.acceptOrder(order);
+        webAPIResult.setResult(0);
+        webAPIResult.setData(a);
+        return webAPIResult;
+    }
+
+    @ApiOperation("商家拒绝接单")
+    @RequestMapping(value = "/refuseOrder", method = RequestMethod.POST)
+    public WebAPIResult refuseOrder(@Param("order_id") String order_id) {
+        WebAPIResult webAPIResult = new WebAPIResult();
+        int a = orderService.refuseOrder(order_id);
+        webAPIResult.setResult(0);
+        webAPIResult.setData(a);
+        return webAPIResult;
+    }
+
+    @ApiOperation("用户取消订单")
+    @RequestMapping(value = "/canserOrder", method = RequestMethod.POST)
+    public WebAPIResult canserOrder(@Param("order_id") String order_id) {
+        WebAPIResult webAPIResult = new WebAPIResult();
+        int a = orderService.canserOrder(order_id);
         webAPIResult.setResult(0);
         webAPIResult.setData(a);
         return webAPIResult;
