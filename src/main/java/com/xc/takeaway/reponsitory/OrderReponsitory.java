@@ -31,4 +31,12 @@ public interface OrderReponsitory {
 
     public Integer canserOrder(String order_id);
 
+    public Integer deleteOrder(String order_id);
+
+    public Map<String,Object> getOrderById(String order_id);
+
+    public Map<String,Object> getShopByNum(String shop_num);
+
+    public Integer updateShop(String shop_num, Float totalPrice);
+
 }

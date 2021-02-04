@@ -15,7 +15,7 @@
         from t_sys_order b
         inner join t_sys_shopinfo a on a.shop_num=b.shop_num
         left join t_sys_shop_comment c on b.order_id=c.id
-        where b.user_name=#{user_name}
+        where b.user_name=#{user_name} and b.user_flag!=1
     </select>
 
     <select id="selectOrders"  resultType="com.xc.takeaway.utils.Order">
@@ -47,7 +47,25 @@
     </update>
 
     <update id="canserOrder">
-        update t_sys_order set canser_state=1 where order_id=#{order_id}
+        update t_sys_order set canser_state='1' where order_id=#{order_id}
+    </update>
+
+    <update id="deleteOrder">
+        update t_sys_order set user_flag=1 where order_id=#{order_id}
+    </update>
+
+    <select id="getOrderById" resultType="java.util.Map">
+        select * from t_sys_order where order_id=#{order_id} limit 1
+    </select>
+
+    <select id="getShopByNum" resultType="java.util.Map">
+        select * from t_sys_shop where shop_num=#{shop_num} limit 1
+    </select>
+
+    <update id="updateShop">
+        update t_sys_shop
+        set sell_count=sell_count + 1,average=(average*sell_count+#{totalPrice})/(sell_count+1)
+        where shop_num=#{shop_num}
     </update>
 
 </mapper>

@@ -72,15 +72,43 @@ public class orderService {
     /**
      * 商家拒绝接单
      **/
-    public Integer refuseOrder(String order_id) {
-        return orderReponsitory.refuseOrder(order_id);
+    public Integer refuseOrder(String orderId) {
+        return orderReponsitory.refuseOrder(orderId);
     }
 
     /**
      * 用户取消订单
      **/
-    public Integer canserOrder(String order_id) {
-        return orderReponsitory.refuseOrder(order_id);
+    public Integer canserOrder(String orderId) {
+        return orderReponsitory.canserOrder(orderId);
+    }
+
+    /**
+     * 用户删除订单
+     **/
+    public Integer deleteOrder(String orderId) {
+        return orderReponsitory.deleteOrder(orderId);
+    }
+
+    /**
+     * 获取订单信息
+     **/
+    public Map<String, Object> getOrderById(String orderId) {
+        return orderReponsitory.getOrderById(orderId);
+    }
+
+    /**
+     * 获取店铺信息
+     **/
+    public Map<String, Object> getShopByNum(String shop_num) {
+        return orderReponsitory.getShopByNum(shop_num);
+    }
+
+    /**
+     * 用户取消订单
+     **/
+    public Integer updateShop(String shop_num, Float totalPrice) {
+        return orderReponsitory.updateShop(shop_num, totalPrice);
     }
 
 }

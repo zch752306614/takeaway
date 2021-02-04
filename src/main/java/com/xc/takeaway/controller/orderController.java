@@ -1,5 +1,6 @@
 package com.xc.takeaway.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.xc.takeaway.WebAPIResult;
 import com.xc.takeaway.service.orderService;
@@ -28,22 +29,14 @@ public class orderController {
     @Autowired
     shopService shopService;
 
-    @ApiOperation("插入订单")
+    @ApiOperation("用户下单")
     @RequestMapping(value = "/insertOrder", method = RequestMethod.POST)
-    public WebAPIResult insertOrder(@RequestBody String foodList) {
+    public WebAPIResult insertOrder(@RequestBody JSONObject obj) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
-        System.out.println(foodList);
-        int start = foodList.indexOf('[');
-        int end = foodList.indexOf(']') + 1;
+        String foodInfo = obj.getString("foodList");
+        JSONArray foodList = JSONArray.fromObject(obj.getJSONArray("foodList"));
 
-        String a = foodList.substring(start, end);
-        System.out.println(a);
-        List<Food> list = JSONArray.toList(JSONArray.fromObject(a), Food.class);
-
-
-//        System.out.println("list");
-//        System.out.println(list);
         //随机id
         String id;
         UUID uuid = UUID.randomUUID();
@@ -53,74 +46,32 @@ public class orderController {
         num = num < 0 ? -num : num;
         id = String.valueOf(num);
 
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        //设置日期格式
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        String totalPrice = "";
         //店铺id
-        String shop_num = list.get(0).shop_num;
-        String extraInfo = "";
-        //
-        String b = foodList.substring(end + 1);
-//        int a=orderService.insertOrder();
-        int infostart = b.indexOf(',');
-        //备注信息
-        extraInfo = b.substring(13, infostart - 1);
-//        System.out.println("111");
-//        System.out.println(extraInfo);
+        String shopNum = foodList.getJSONObject(0).getString("shop_num");
+        String extraInfo = obj.getString("extraInfo");
+        String totalPrice = obj.getString("totalPrice");
+        String locationInfo = obj.getString("locationInfo");
+        String userName = obj.getString("user");
 
-        String c = b.substring(infostart + 14);
-
-        int priceend = c.indexOf(',');
-        String a1 = c.substring(0, priceend);
-
-        totalPrice = a1;
-
-//        System.out.println(totalPrice);
-
-        String a2 = c.substring(priceend + 17);
-        int location = a2.indexOf(",");
-        String a4 = a2.substring(0, location - 1);
-//        System.out.println(a4);
-
-
-        int last = a2.indexOf('}');
-
-        String a3 = a2.substring(location + 9, last - 1);
-
-        System.out.println(a3);
-
-        Shop myshop = new Shop();
-        myshop.setShop_num(shop_num);
-        List<Shop> shopList = shopService.oneShop(myshop);
-        int mysellcount = Integer.parseInt(shopList.get(0).getSell_count());
-        String shop_img = shopList.get(0).shop_img;
-
-        //更新平均
-        float myaverage = Float.parseFloat(shopList.get(0).getAverage());
-        float average1 = Float.parseFloat(totalPrice) + myaverage / 2;
-
-        //更新销量
-        int count = list.size() + mysellcount;
-        System.out.println("count:");
-        System.out.println(count);
-        Shop shopCount = new Shop();
-        shopCount.setShop_num(shop_num);
-        shopCount.setSell_count(Integer.toString(count));
-        shopCount.setAverage(Float.toString(average1));
-        int mycount = shopService.shopCount(shopCount);
-
+        Shop myShop = new Shop();
+        myShop.setShop_num(shopNum);
+        List<Shop> shopList = shopService.oneShop(myShop);
+        String shopImg = shopList.get(0).shop_img;
 
         Order order = new Order();
         order.setOrder_id(id);
-        order.setShop_num(shop_num);
+        order.setShop_num(shopNum);
         order.setOrder_time(df.format(new Date()));
         order.setTotal_price(totalPrice);
         order.setPay_state("0");
-        order.setFood_info(a);
+        order.setFood_info(foodInfo);
         order.setExtra_info(extraInfo);
-        order.setLocation(a4);
-        order.setUser_name(a3);
-        order.setShop_img(shop_img);
+        order.setLocation(locationInfo);
+        order.setUser_name(userName);
+        order.setShop_img(shopImg);
         System.out.println(order);
 
         int result = orderService.insertOrder(order);
@@ -172,19 +123,39 @@ public class orderController {
         return webAPIResult;
     }
 
-    @ApiOperation("更新收货状态")
+    @ApiOperation("用户收货")
     @RequestMapping(value = "/updateOrder", method = RequestMethod.POST)
     public WebAPIResult updateOrder(@RequestBody Order order) {
         WebAPIResult webAPIResult = new WebAPIResult();
         System.out.println(order);
-        order.setConfirm_state("0");
-        int a = orderService.updateOrder(order);
-        webAPIResult.setResult(0);
-        webAPIResult.setData(a);
+        //获取订单信息
+        Map<String, Object> rt = orderService.getOrderById(order.getOrder_id());
+        String shopNum = rt.get("shop_num").toString();
+        String totalPrice = rt.get("total_price").toString();
+        String confirmState = rt.get("confirm_state").toString();
+        String acceptState = rt.get("accept_state").toString();
+        //商家未接单
+        if (!acceptState.equals("1")) {
+            webAPIResult.setResult(0);
+            webAPIResult.setMessage("操作失败！");
+        } else {
+            order.setConfirm_state("1");
+            int a = orderService.updateOrder(order);
+            //获取店铺信息
+            rt = orderService.getShopByNum(shopNum);
+            String average = rt.get("average").toString();
+            String sellCount = rt.get("sell_count").toString();
+            if (a > 0) {
+                //更新销量、人均消费
+                a = orderService.updateShop(shopNum, Float.parseFloat(totalPrice));
+                webAPIResult.setResult(0);
+                webAPIResult.setData(a);
+            }
+        }
         return webAPIResult;
     }
 
-    @ApiOperation("更新接受状态")
+    @ApiOperation("商家接单")
     @RequestMapping(value = "/acceptOrder", method = RequestMethod.POST)
     public WebAPIResult acceptOrder(@RequestBody Order order) {
         WebAPIResult webAPIResult = new WebAPIResult();
@@ -198,9 +169,10 @@ public class orderController {
 
     @ApiOperation("商家拒绝接单")
     @RequestMapping(value = "/refuseOrder", method = RequestMethod.POST)
-    public WebAPIResult refuseOrder(@Param("order_id") String order_id) {
+    public WebAPIResult refuseOrder(@RequestBody JSONObject jsonObject) {
+        String orderId = jsonObject.getString("order_id");
         WebAPIResult webAPIResult = new WebAPIResult();
-        int a = orderService.refuseOrder(order_id);
+        int a = orderService.refuseOrder(orderId);
         webAPIResult.setResult(0);
         webAPIResult.setData(a);
         return webAPIResult;
@@ -208,9 +180,22 @@ public class orderController {
 
     @ApiOperation("用户取消订单")
     @RequestMapping(value = "/canserOrder", method = RequestMethod.POST)
-    public WebAPIResult canserOrder(@Param("order_id") String order_id) {
+    public WebAPIResult canserOrder(@RequestBody JSONObject jsonObject) {
+        String orderId = jsonObject.getString("order_id");
         WebAPIResult webAPIResult = new WebAPIResult();
-        int a = orderService.canserOrder(order_id);
+        System.out.println("orderId=" + orderId);
+        int a = orderService.canserOrder(orderId);
+        webAPIResult.setResult(0);
+        webAPIResult.setData(a);
+        return webAPIResult;
+    }
+
+    @ApiOperation("用户删除历史订单")
+    @RequestMapping(value = "/deleteOrder", method = RequestMethod.POST)
+    public WebAPIResult deleteOrder(@RequestBody JSONObject jsonObject) {
+        String orderId = jsonObject.getString("order_id");
+        WebAPIResult webAPIResult = new WebAPIResult();
+        int a = orderService.deleteOrder(orderId);
         webAPIResult.setResult(0);
         webAPIResult.setData(a);
         return webAPIResult;
