@@ -34,7 +34,7 @@ public class orderController {
     public WebAPIResult insertOrder(@RequestBody JSONObject obj) {
         WebAPIResult webAPIResult = new WebAPIResult();
 
-        String foodInfo = obj.getString("foodList");
+        String foodInfo = obj.getJSONArray("foodList").toJSONString();
         JSONArray foodList = JSONArray.fromObject(obj.getJSONArray("foodList"));
 
         //随机id
