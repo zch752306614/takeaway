@@ -67,15 +67,10 @@
     </update>
 
     <insert id="insertFood" parameterType="com.xc.takeaway.utils.Food">
-        insert into t_sys_shop values(#{food_id},
-        #{food_name},
-        #{food_img},
-        #{sell_count},
-        #{shop_num},
-        #{food_price},
-        #{food_extra},
-        #{left_name_id},
-        0)
+        insert into t_sys_shop(food_id,food_name,food_img,sell_count,shop_num,
+        food_price,food_extra,left_name_id,delete_flag)
+        values(#{food_id},#{food_name},#{food_img},0,#{shop_num},
+        #{food_price},#{food_extra},#{left_name_id},0)
     </insert>
 
     <select id="shopFilter" resultType="com.xc.takeaway.utils.Shop">

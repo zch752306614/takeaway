@@ -284,6 +284,7 @@ public class foodController {
         System.out.println(result);
 
         int b = shopService.insertSelfshop(shop);
+        System.out.println("shop=" + shop);
         System.out.println(b);
         webAPIResult.setResult(0);
         webAPIResult.setCause(shop_num);

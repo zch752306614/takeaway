@@ -55,6 +55,7 @@ public class orderController {
         String totalPrice = obj.getString("totalPrice");
         String locationInfo = obj.getString("locationInfo");
         String userName = obj.getString("user");
+        String tel = obj.getString("tel");
 
         Shop myShop = new Shop();
         myShop.setShop_num(shopNum);
@@ -72,6 +73,7 @@ public class orderController {
         order.setLocation(locationInfo);
         order.setUser_name(userName);
         order.setShop_img(shopImg);
+        order.setTel(tel);
         System.out.println(order);
 
         int result = orderService.insertOrder(order);

@@ -34,9 +34,12 @@
     </insert>
 
     <insert id="insertSelfshop" parameterType="com.xc.takeaway.utils.Shop" >
-        insert into t_sys_shopinfo values(#{id},5.0,5.0,5.0,#{shop_img},#{send_time},
-        #{distance},#{sell_start},#{distribution_price},0,#{shop_num},5.0,#{shop_name},#{shop_type},
-        #{shop_place},#{send_service},0,0)
+        insert into t_sys_shopinfo(id,shop_score,taste_score,pack_score,shop_img,
+        send_time,distance,sell_start,distribution_price,average,shop_num,send_score,
+        shop_name,shop_type,shop_place,send_service,delete_flag,sell_count)
+        values(#{id},5.0,5.0,5.0,#{shop_img},
+        #{send_time},#{distance},#{sell_start},#{distribution_price},0,#{shop_num},5.0,
+        #{shop_name},#{shop_type},#{shop_place},#{send_service},0,0)
     </insert>
 
     <update id="shopCount" parameterType="com.xc.takeaway.utils.Shop" >
