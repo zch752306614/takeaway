@@ -145,6 +145,7 @@ public class orderController {
             int a = orderService.updateOrder(order);
             //获取店铺信息
             rt = orderService.getShopByNum(shopNum);
+            System.out.println("rt=" + rt);
             String average = rt.get("average").toString();
             String sellCount = rt.get("sell_count").toString();
             if (a > 0) {

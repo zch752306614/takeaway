@@ -105,7 +105,7 @@ public class orderService {
     }
 
     /**
-     * 用户取消订单
+     * 更新销量
      **/
     public Integer updateShop(String shop_num, Float totalPrice) {
         return orderReponsitory.updateShop(shop_num, totalPrice);
