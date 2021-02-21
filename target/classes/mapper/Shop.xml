@@ -3,11 +3,11 @@
 
 <mapper namespace="com.xc.takeaway.reponsitory.ShopReponsitory">
     <select id="shoplist" parameterType="com.xc.takeaway.utils.Shop" resultType="com.xc.takeaway.utils.Shop">
-        SELECT * FROM t_sys_shopinfo WHERE shop_type=#{shop_type}
+        SELECT * FROM t_sys_shopinfo WHERE shop_type=#{shop_type} and delete_flag=0
     </select>
 
     <select id="oneShop" parameterType="com.xc.takeaway.utils.Shop" resultType="com.xc.takeaway.utils.Shop">
-        SELECT * FROM t_sys_shopinfo WHERE shop_num=#{shop_num}
+        SELECT * FROM t_sys_shopinfo WHERE shop_num=#{shop_num} and delete_flag=0
     </select>
 
     <update id="updateShop" parameterType="com.xc.takeaway.utils.Shop" >
@@ -49,14 +49,14 @@
     </update>
 
     <select id="shopTypelist" parameterType="com.xc.takeaway.utils.Shop" resultType="com.xc.takeaway.utils.Shop">
-        SELECT * FROM t_sys_shopinfo WHERE shop_type=#{shop_type} order by shop_score DESC
+        SELECT * FROM t_sys_shopinfo WHERE shop_type=#{shop_type} and delete_flag=0 order by shop_score DESC
     </select>
 
     <select id="byAverage" parameterType="com.xc.takeaway.utils.Shop" resultType="com.xc.takeaway.utils.Shop">
-        SELECT * FROM t_sys_shopinfo WHERE shop_type=#{shop_type} order by average ASC
+        SELECT * FROM t_sys_shopinfo WHERE shop_type=#{shop_type} and delete_flag=0 order by average ASC
     </select>
 
     <select id="byDistance" parameterType="com.xc.takeaway.utils.Shop" resultType="com.xc.takeaway.utils.Shop">
-        SELECT * FROM t_sys_shopinfo WHERE shop_type=#{shop_type} order by (distance+0) ASC
+        SELECT * FROM t_sys_shopinfo WHERE shop_type=#{shop_type} and delete_flag=0 order by (distance+0) ASC
     </select>
 </mapper>
