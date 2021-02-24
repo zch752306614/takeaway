@@ -5,8 +5,10 @@ import com.xc.takeaway.utils.Shop;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import springfox.documentation.spring.web.json.Json;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class shopService {
@@ -88,6 +90,13 @@ public class shopService {
      **/
     public List<Shop> byDistance(Shop shop) {
         return shopReponsitory.byDistance(shop);
+    }
+
+    /**
+     * 查看店铺一周内的营业额
+     * */
+    public List<Map<String,Object>> getShopCount(String shopNum) {
+        return shopReponsitory.getShopCount(shopNum);
     }
 
 }

@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 @Mapper
@@ -33,4 +34,7 @@ public interface ShopReponsitory {
     public List<Shop> byAverage(Shop shop);
 
     public List<Shop> byDistance(Shop shop);
+
+    public List<Map<String,Object>> getShopCount(String shopNum);
+
 }

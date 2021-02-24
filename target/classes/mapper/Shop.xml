@@ -59,4 +59,13 @@
     <select id="byDistance" parameterType="com.xc.takeaway.utils.Shop" resultType="com.xc.takeaway.utils.Shop">
         SELECT * FROM t_sys_shopinfo WHERE shop_type=#{shop_type} and delete_flag=0 order by (distance+0) ASC
     </select>
+
+    <select id="getShopCount" resultType="java.util.Map">
+        select a.shop_num,b.shop_name,convert(a.order_time,char(10)) as date,count(a.order_id) as sell_count,sum(a.total_price) as total_price
+        from t_sys_order as a
+        inner join t_sys_shopinfo as b on a.shop_num=b.shop_num
+        where a.order_time>=date_sub(curdate(), interval 6 day) and a.confirm_state=1 and a.shop_num=#{shopNum}
+        group by a.shop_num,date,b.shop_name
+        order by date
+    </select>
 </mapper>
