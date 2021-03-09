@@ -36,6 +36,10 @@ public class shopService {
         return shopReponsitory.deleteShop(shop);
     }
 
+    public Integer deleteUserShop(String shopNum) {
+        return shopReponsitory.deleteUserShop(shopNum);
+    }
+
     /**
      * 新增店铺
      **/

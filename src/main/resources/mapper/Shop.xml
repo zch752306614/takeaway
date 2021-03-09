@@ -27,6 +27,10 @@
         update  t_sys_shopinfo set delete_flag=1 where id=#{id}
     </update>
 
+    <update id="deleteUserShop">
+        update  t_sys_user set shop_num='' where shop_num=#{shopNum}
+    </update>
+
     <insert id="insertShop" parameterType="com.xc.takeaway.utils.Shop" >
         insert into t_sys_shopinfo values(#{id},#{shop_score},#{taste_score},#{pack_score},#{shop_img},#{send_time},
         #{distance},#{sell_start},#{distribution_price},#{average},#{shop_num},#{send_score},#{shop_name},#{shop_type},

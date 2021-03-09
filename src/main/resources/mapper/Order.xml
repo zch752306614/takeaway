@@ -16,6 +16,7 @@
         inner join t_sys_shopinfo a on a.shop_num=b.shop_num
         left join t_sys_shop_comment c on b.order_id=c.id
         where b.user_name=#{user_name} and b.user_flag!=1
+        order by b.order_time desc
     </select>
 
     <select id="selectOrders"  resultType="com.xc.takeaway.utils.Order">
@@ -32,6 +33,7 @@
         inner join t_sys_shopinfo a on a.shop_num=b.shop_num
         left join t_sys_shop_comment c on b.order_id=c.id
         where a.shop_num=#{shop_num}
+        order by b.order_time desc
     </select>
 
     <update id="updateOrder" parameterType="com.xc.takeaway.utils.Order">

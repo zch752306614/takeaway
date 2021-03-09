@@ -18,6 +18,9 @@ public interface ShopReponsitory {
     //删除店铺
     public Integer deleteShop(Shop shop);
 
+    //删除店铺
+    public Integer deleteUserShop(String shopNum);
+
     //添加商铺
     public Integer insertShop(Shop shop);
 

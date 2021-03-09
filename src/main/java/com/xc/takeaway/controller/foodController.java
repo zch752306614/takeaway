@@ -126,7 +126,8 @@ public class foodController {
         System.out.println(shop);
         WebAPIResult webAPIResult = new WebAPIResult();
 
-        int a = shopService.deleteShop(shop);
+        shopService.deleteShop(shop);
+        int a = shopService.deleteUserShop(shop.getShop_num());
         System.out.println(a);
 
         Food food = new Food();
