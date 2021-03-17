@@ -28,7 +28,7 @@
     </update>
 
     <update id="deleteUserShop">
-        update  t_sys_user set shop_num='' where shop_num=#{shopNum}
+        update  t_sys_user set shop_num=null where shop_num=${shopNum}
     </update>
 
     <insert id="insertShop" parameterType="com.xc.takeaway.utils.Shop" >

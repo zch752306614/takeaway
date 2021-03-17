@@ -11,19 +11,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a6f459-adb4-4221-949f-90c871f174c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/shopOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/shopOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/foodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/controller/foodController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/reponsitory/ShopReponsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/reponsitory/ShopReponsitory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/service/shopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xc/takeaway/service/shopService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/Shop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/Shop.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/shopOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/shopOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/foodController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/controller/foodController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/reponsitory/ShopReponsitory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/reponsitory/ShopReponsitory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/shopService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xc/takeaway/service/shopService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/Shop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/Shop.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
@@ -167,8 +170,36 @@
       <workItem from="1613957841472" duration="444000" />
       <workItem from="1614042515517" duration="91000" />
       <workItem from="1614042697075" duration="668000" />
-      <workItem from="1614148863319" duration="4525000" />
+      <workItem from="1614148863319" duration="6207000" />
+      <workItem from="1614222865105" duration="7524000" />
+      <workItem from="1614579891737" duration="2122000" />
+      <workItem from="1614588319867" duration="1654000" />
+      <workItem from="1614841691225" duration="1894000" />
+      <workItem from="1615274562186" duration="7356000" />
+      <workItem from="1615971349661" duration="2338000" />
     </task>
+    <task id="LOCAL-00001" summary="修改销量查询">
+      <created>1614580116889</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614580116889</updated>
+    </task>
+    <task id="LOCAL-00002" summary="删除单家后用户那边的shop_num置空">
+      <created>1615281839073</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615281839073</updated>
+    </task>
+    <task id="LOCAL-00003" summary="删除单家后用户那边的shop_num置空">
+      <created>1615281858744</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1615281858744</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +216,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改销量查询" />
+    <MESSAGE value="删除单家后用户那边的shop_num置空" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除单家后用户那边的shop_num置空" />
   </component>
   <component name="WindowStateProjectService">
     <state x="103" y="271" key="#SQL_Dialects" timestamp="1614155685527">
@@ -203,38 +239,42 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="498" y="297" width="443" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.860@0.0.1440.860" timestamp="1610329835443" />
-    <state width="1396" height="222" key="GridCell.Tab.0.bottom" timestamp="1614156891703">
+    <state width="1396" height="222" key="GridCell.Tab.0.bottom" timestamp="1615973490508">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="222" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1614156891703" />
-    <state width="1396" height="222" key="GridCell.Tab.0.center" timestamp="1614156891703">
+    <state width="1396" height="222" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1615973490508" />
+    <state width="1396" height="234" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1615281712808" />
+    <state width="1396" height="222" key="GridCell.Tab.0.center" timestamp="1615973490508">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="222" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1614156891703" />
-    <state width="1396" height="222" key="GridCell.Tab.0.left" timestamp="1614156891703">
+    <state width="1396" height="222" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1615973490508" />
+    <state width="1396" height="234" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1615281712808" />
+    <state width="1396" height="222" key="GridCell.Tab.0.left" timestamp="1615973490508">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="222" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1614156891703" />
-    <state width="1396" height="222" key="GridCell.Tab.0.right" timestamp="1614156891703">
+    <state width="1396" height="222" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1615973490508" />
+    <state width="1396" height="234" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1615281712808" />
+    <state width="1396" height="222" key="GridCell.Tab.0.right" timestamp="1615973490508">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="222" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1614156891703" />
-    <state width="1396" height="222" key="GridCell.Tab.1.bottom" timestamp="1614156891703">
+    <state width="1396" height="222" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1615973490508" />
+    <state width="1396" height="234" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1615281712808" />
+    <state width="1396" height="222" key="GridCell.Tab.1.bottom" timestamp="1615973490508">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="222" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1614156891703" />
-    <state width="1396" height="222" key="GridCell.Tab.1.center" timestamp="1614156891703">
+    <state width="1396" height="222" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1615973490508" />
+    <state width="1396" height="222" key="GridCell.Tab.1.center" timestamp="1615973490508">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="222" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1614156891703" />
-    <state width="1396" height="222" key="GridCell.Tab.1.left" timestamp="1614156891703">
+    <state width="1396" height="222" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1615973490508" />
+    <state width="1396" height="222" key="GridCell.Tab.1.left" timestamp="1615973490508">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="222" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1614156891703" />
-    <state width="1396" height="222" key="GridCell.Tab.1.right" timestamp="1614156891703">
+    <state width="1396" height="222" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1615973490508" />
+    <state width="1396" height="222" key="GridCell.Tab.1.right" timestamp="1615973490508">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="222" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1614156891703" />
+    <state width="1396" height="222" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1615973490508" />
     <state width="1397" height="276" key="GridCell.Tab.2.bottom" timestamp="1613813716244">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -259,5 +299,14 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="335" y="79" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1613866037142" />
+    <state x="312" y="183" key="Vcs.Push.Dialog.v2" timestamp="1615281868470">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="312" y="175" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1614587506030" />
+    <state x="312" y="183" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1615281868470" />
+    <state x="423" y="164" width="593" height="532" key="find.popup" timestamp="1615972097905">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="423" y="164" width="593" height="532" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1615972097905" />
   </component>
 </project>

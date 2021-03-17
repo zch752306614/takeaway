@@ -9,6 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.support.incrementer.SybaseAnywhereMaxValueIncrementer;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -122,6 +123,7 @@ public class foodController {
 
     @RequestMapping(value = "/deleteShop", method = RequestMethod.POST)
     @ApiOperation("删除商家信息")
+    @Transactional
     public WebAPIResult deleteShop(@RequestBody Shop shop) {
         System.out.println(shop);
         WebAPIResult webAPIResult = new WebAPIResult();
@@ -135,13 +137,13 @@ public class foodController {
         int b = foodService.shopFooddelete(food);
         System.out.println(b);
 
-        if (a != 0 && b != 0) {
+        //if (a != 0 && b != 0) {
             webAPIResult.setResult(0);
             webAPIResult.setData(a);
-        } else {
-            webAPIResult.setResult(1);
-            webAPIResult.setMessage("删除出错");
-        }
+        //} else {
+            //webAPIResult.setResult(1);
+            //webAPIResult.setMessage("删除出错");
+        //}
         return webAPIResult;
     }
 

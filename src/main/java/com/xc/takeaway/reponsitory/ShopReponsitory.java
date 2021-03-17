@@ -2,6 +2,7 @@ package com.xc.takeaway.reponsitory;
 
 import com.xc.takeaway.utils.Shop;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public interface ShopReponsitory {
     public Integer deleteShop(Shop shop);
 
     //删除店铺
-    public Integer deleteUserShop(String shopNum);
+    public Integer deleteUserShop(@Param("shopNum") String shopNum);
 
     //添加商铺
     public Integer insertShop(Shop shop);
